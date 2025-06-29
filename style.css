@@ -1,0 +1,63 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #111;
+  color: white;
+  margin: 0;
+  overflow: hidden;
+}
+
+.game-area {
+  position: relative;
+  width: 300px;
+  height: 500px;
+  margin: 20px auto;
+  background-color: #222;
+  border: 3px solid white;
+  overflow: hidden;
+}
+
+.hit-zone {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.note {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  left: 125px;
+  border-radius: 5px;
+}
+.note {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.note.left {
+  background-color: blue;
+}
+.note.middle {
+  background-color: orange;
+  left: calc(50% - 25px);
+}
+.note.right {
+  background-color: green;
+}
+.note {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: gray;
+  border-radius: 50%;
+  top: -50px;
+}
+

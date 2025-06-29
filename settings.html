@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Paramètres</title>
+</head>
+<body>
+  <h1>Paramètres des touches</h1>
+
+  <label for="volumeControl">Volume :</label>
+  <input type="range" id="volumeControl" min="0" max="100" step="1" />
+  <span id="volumeValue">0%</span>
+  
+  <label>Touche Gauche :
+    <input type="text" id="left-key" maxlength="1">
+  </label><br><br>
+
+  <label>Touche Milieu :
+    <input type="text" id="middle-key" maxlength="1">
+  </label><br><br>
+
+  <label>Touche Droite :
+    <input type="text" id="right-key" maxlength="1">
+  </label><br><br>
+
+  <button onclick="saveSettings()">Enregistrer</button>
+
+  <script>
+    // Charger les touches actuelles si elles existent
+    window.onload = () => {
+      document.getElementById("left-key").value = localStorage.getItem("leftKey") || "a";
+      document.getElementById("middle-key").value = localStorage.getItem("middleKey") || "s";
+      document.getElementById("right-key").value = localStorage.getItem("rightKey") || "l";
+    };
+
+    function saveSettings() {
+      const left = document.getElementById("left-key").value.toLowerCase();
+      const middle = document.getElementById("middle-key").value.toLowerCase();
+      const right = document.getElementById("right-key").value.toLowerCase();
+
+      localStorage.setItem("leftKey", left);
+      localStorage.setItem("middleKey", middle);
+      localStorage.setItem("rightKey", right);
+
+      alert("Touches enregistrées !");
+    }
+    
+  </script>
+</body>
+</html>
